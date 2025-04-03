@@ -278,7 +278,7 @@ class UnaryEmbedding(HamiltonianEmbedding):
 		# the reversal makes the bitstrings align with table 8 and the
 		# little endian defintion given in Def. 3 under B.1.2 on pg. 39
 		bitstrings = get_bitstrings_1d(n, "unary")
-		bitstrings = ["".join(reversed(bitstring)) for bitstring in bitstrings]
+		# bitstrings = ["".join(reversed(bitstring)) for bitstring in bitstrings] ## removing this line, as per yingkang's email
 
 		uks = [qutip.tensor(qutip.basis(2, 0) if s == "0" else qutip.basis(2, 1) for s in bitstring) for bitstring in bitstrings]
 
